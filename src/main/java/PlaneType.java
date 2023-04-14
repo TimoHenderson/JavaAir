@@ -1,6 +1,7 @@
 public enum PlaneType {
     BOEING747(100, 250),
-    AIRBUS300(200, 450);
+    AIRBUS300(200, 450),
+    CESSNA(3, 5);
 
     private final int capacity;
     private final int cargoMaxWeight;
