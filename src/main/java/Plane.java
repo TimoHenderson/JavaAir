@@ -20,4 +20,8 @@ public class Plane {
     public double getMaxPassengerCargoWeight() {
         return (double) (planeType.getCargoMaxWeight()) / 2;
     }
+
+    public String getName() {
+        return planeType.getName();
+    }
 }

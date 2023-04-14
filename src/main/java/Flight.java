@@ -62,4 +62,8 @@ public class Flight {
             passengers.add(passenger);
         }
     }
+
+    public String fly() {
+        return pilots.get(0).fly(this);
+    }
 }

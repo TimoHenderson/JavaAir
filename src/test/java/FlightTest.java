@@ -24,7 +24,6 @@ public class FlightTest {
 
         plane = new Plane(PlaneType.CESSNA);
 
-
         flight = new Flight(pilots, cabinCrew, plane, "FR756", Airport.EDI, Airport.MLK, "8PM");
     }
 
@@ -86,5 +85,11 @@ public class FlightTest {
         flight.addPassenger(new Passenger("Edward Smith", 1));
         flight.addPassenger(new Passenger("Edward Smith", 1));
         assertEquals(3, flight.getNumPassengers());
+    }
+
+    @Test
+    public void canFly() {
+        String expected = "I'm flying a Cessna from Edinburgh to MLK!";
+        assertEquals(expected, flight.fly());
     }
 }

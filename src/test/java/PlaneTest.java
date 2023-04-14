@@ -30,4 +30,9 @@ public class PlaneTest {
     public void hasMaxPassengerCargoWeight() {
         assertEquals(125, plane.getMaxPassengerCargoWeight(), 0.01);
     }
+
+    @Test
+    public void hasName() {
+        assertEquals("Boeing 747", plane.getName());
+    }
 }
