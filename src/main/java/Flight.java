@@ -60,12 +60,11 @@ public class Flight {
 
     public void addPassenger(Passenger passenger) {
         if (getNumFreeSeats() > 0) {
-            passenger.addFlight(this);
+            passenger.setFlight(this);
             passengers.add(passenger);
         }
     }
-
-
+    
     public String fly() {
         return pilots.get(0).fly(this);
     }

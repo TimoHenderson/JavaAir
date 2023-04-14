@@ -44,7 +44,18 @@ public class PassengerTest {
         Date dateTime = DateUtil.getDateTime("12-08-2023;20:00");
 
         Flight flight = new Flight(pilots, cabinCrew, plane, "FR756", Airport.EDI, Airport.MLK, dateTime);
-        passenger.addFlight(flight);
+        passenger.setFlight(flight);
         assertEquals(flight, passenger.getFlight());
+    }
+
+    @Test
+    public void hasSeatNumberIsMinus1() {
+        assertEquals(-1, passenger.getSeatNum());
+    }
+
+    @Test
+    public void canAddSeatNum() {
+        passenger.setSeatNum(2);
+        assertEquals(2, passenger.getSeatNum());
     }
 }
