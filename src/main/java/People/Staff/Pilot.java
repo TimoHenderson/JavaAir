@@ -1,3 +1,7 @@
+package People.Staff;
+
+import Flights.Flight;
+
 public class Pilot extends StaffMember {
     private final String licenceNum;
 

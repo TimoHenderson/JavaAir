@@ -1,3 +1,5 @@
+package Flights;
+
 public enum Airport {
     GLA("Glasgow"),
     EDI("Edinburgh"),

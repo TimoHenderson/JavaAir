@@ -1,3 +1,5 @@
+package People.Staff;
+
 public class CabinCrewMember extends StaffMember {
 
     public CabinCrewMember(String name, Rank rank) {

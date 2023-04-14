@@ -1,5 +1,7 @@
+package Flights;
+
 public class FlightManager {
-    
+
     public static double calculateHoldWeightPerPassenger(Flight flight) {
         Plane plane = flight.getPlane();
         double weightForPassengerLuggage = plane.getMaxPassengerCargoWeight();

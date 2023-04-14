@@ -1,3 +1,8 @@
+import Flights.*;
+import People.Customers.Passenger;
+import People.Staff.CabinCrewMember;
+import People.Staff.Pilot;
+import People.Staff.Rank;
 import org.junit.Before;
 import org.junit.Test;
 

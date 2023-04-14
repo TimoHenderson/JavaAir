@@ -1,3 +1,8 @@
+package People.Customers;
+
+import Flights.Flight;
+import People.Person;
+
 public class Passenger extends Person {
     private final int numBags;
     private Flight flight = null;

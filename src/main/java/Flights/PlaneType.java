@@ -1,3 +1,5 @@
+package Flights;
+
 public enum PlaneType {
     BOEING747(100, 250, "Boeing 747"),
     AIRBUS300(200, 450, "Airbus 300"),

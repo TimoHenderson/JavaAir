@@ -1,3 +1,9 @@
+package Flights;
+
+import People.Customers.Passenger;
+import People.Staff.CabinCrewMember;
+import People.Staff.Pilot;
+
 import java.util.ArrayList;
 import java.util.Date;
 
