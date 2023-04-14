@@ -10,6 +10,7 @@ public class Flight {
     private final Airport origin;
     private final Airport destination;
     private final Date departureTime;
+    private final ArrayList<Integer> bookedSeats = new ArrayList<>();
 
     public Flight(ArrayList<Pilot> pilots, ArrayList<CabinCrewMember> cabinCrew, Plane plane, String flightNum, Airport origin, Airport destination, Date departureTime) {
         this.pilots = pilots;
@@ -61,10 +62,11 @@ public class Flight {
     public void addPassenger(Passenger passenger) {
         if (getNumFreeSeats() > 0) {
             passenger.setFlight(this);
+            passenger.setSeatNum(getSeatNum());
             passengers.add(passenger);
         }
     }
-    
+
     public String fly() {
         return pilots.get(0).fly(this);
     }
@@ -74,5 +76,14 @@ public class Flight {
                 .reduce(0,
                         (total, passenger) -> total + passenger.getNumBags(),
                         Integer::sum);
+    }
+
+    private int getSeatNum() {
+        int seatNum = 0;
+        while (seatNum == 0 || bookedSeats.contains(seatNum)) {
+            seatNum = (int) (Math.random() * (plane.getCapacity()) + 1);
+        }
+        bookedSeats.add(seatNum);
+        return seatNum;
     }
 }

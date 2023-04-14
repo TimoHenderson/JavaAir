@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class FlightTest {
     Flight flight;
@@ -108,6 +109,27 @@ public class FlightTest {
         Passenger passenger = new Passenger("Edward Smith", 1);
         flight.addPassenger(passenger);
         assertEquals(flight, passenger.getFlight());
+    }
 
+    @Test
+    public void passengerIsAssignedSeatNum() {
+        Passenger passenger = new Passenger("Edward Smith", 1);
+        flight.addPassenger(passenger);
+        System.out.println(passenger.getSeatNum());
+        assertNotEquals(-1, passenger.getSeatNum());
+
+    }
+
+    @Test
+    public void passengerIsAssignedUniqueSeatNum() {
+        Passenger passenger1 = new Passenger("Edward Smith", 1);
+        Passenger passenger2 = new Passenger("Edward Smith", 1);
+        Passenger passenger3 = new Passenger("Edward Smith", 1);
+        flight.addPassenger(passenger1);
+        flight.addPassenger(passenger2);
+        flight.addPassenger(passenger3);
+        assertNotEquals(passenger1.getSeatNum(), passenger2.getSeatNum());
+        assertNotEquals(passenger2.getSeatNum(), passenger3.getSeatNum());
+        assertNotEquals(passenger3.getSeatNum(), passenger1.getSeatNum());
     }
 }
