@@ -21,8 +21,8 @@ public class CabinCrewMemberTest {
         assertEquals("Jim Steward", crewMember.getName());
     }
 
-//    @Test
-//    public void canRelayMessage() {
-//        assertEquals("");
-//    }
+    @Test
+    public void canRelayMessage() {
+        assertEquals("All Passengers please Sit Down", crewMember.relayMessage("Sit Down"));
+    }
 }
