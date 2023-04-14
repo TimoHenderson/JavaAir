@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
 
@@ -41,8 +42,9 @@ public class PilotTest {
         cabinCrew.add(new CabinCrewMember("Francis Ngannou", Rank.FLIGHT_ATTENDANT));
 
         Plane plane = new Plane(PlaneType.CESSNA);
+        Date dateTime = DateUtil.getDateTime("12-08-2023;20:00");
 
-        Flight flight = new Flight(pilots, cabinCrew, plane, "FR756", Airport.EDI, Airport.MLK, "8PM");
+        Flight flight = new Flight(pilots, cabinCrew, plane, "FR756", Airport.EDI, Airport.MLK, dateTime);
         String expected = "I'm flying a Cessna from Edinburgh to MLK!";
         assertEquals(expected, pilot.fly(flight));
     }
