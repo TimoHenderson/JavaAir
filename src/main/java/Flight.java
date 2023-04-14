@@ -60,6 +60,7 @@ public class Flight {
 
     public void addPassenger(Passenger passenger) {
         if (getNumFreeSeats() > 0) {
+            passenger.addFlight(this);
             passengers.add(passenger);
         }
     }

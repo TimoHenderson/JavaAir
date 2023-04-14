@@ -102,4 +102,12 @@ public class FlightTest {
         flight.addPassenger(new Passenger("Edward Smith", 3));
         assertEquals(6, flight.getCheckedBaggageWeight());
     }
+
+    @Test
+    public void flightIsAddedToPassenger() {
+        Passenger passenger = new Passenger("Edward Smith", 1);
+        flight.addPassenger(passenger);
+        assertEquals(flight, passenger.getFlight());
+
+    }
 }
