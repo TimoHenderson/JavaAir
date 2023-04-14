@@ -1,5 +1,6 @@
 public class Passenger extends Person {
     private final int numBags;
+    private Flight flight = null;
 
     public Passenger(String name, int numBags) {
         super(name);
@@ -10,4 +11,11 @@ public class Passenger extends Person {
         return numBags;
     }
 
+    public void addFlight(Flight flight) {
+        this.flight = flight;
+    }
+
+    public Flight getFlight() {
+        return flight;
+    }
 }
