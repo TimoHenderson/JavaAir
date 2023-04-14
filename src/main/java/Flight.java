@@ -63,7 +63,15 @@ public class Flight {
         }
     }
 
+
     public String fly() {
         return pilots.get(0).fly(this);
+    }
+
+    public int getCheckedBaggageWeight() {
+        return passengers.stream()
+                .reduce(0,
+                        (total, passenger) -> total + passenger.getNumBags(),
+                        Integer::sum);
     }
 }

@@ -92,4 +92,12 @@ public class FlightTest {
         String expected = "I'm flying a Cessna from Edinburgh to MLK!";
         assertEquals(expected, flight.fly());
     }
+
+    @Test
+    public void canGetHowManyBagsChecked() {
+        flight.addPassenger(new Passenger("Edward Smith", 1));
+        flight.addPassenger(new Passenger("Edward Smith", 2));
+        flight.addPassenger(new Passenger("Edward Smith", 3));
+        assertEquals(6, flight.getCheckedBaggageWeight());
+    }
 }
